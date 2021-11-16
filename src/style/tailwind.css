@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: 'SOV_MuekMod';
+    src: url('../assets/fonts/SOV_MuekMod.ttf');
+  }
+  @font-face {
+    font-family: 'SOV_MuekMod_Bold';
+    src: url('../assets/fonts/SOV_MuekMod_Bold.ttf');
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: 'SOV_JD_KraNok';
+    src: url('../assets/fonts/SOV_JD_KraNok.ttf');
+  }
