@@ -11,7 +11,9 @@
 <span class="block w-6 my-1 border-b-2 border-current"></span>
 </button>
 <div class="hidden w-full ml-auto lg:block lg:w-auto">
-<router-link to="/" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">หน้าหลัก</router-link>
+<router-link to="/" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">หน้าหลัก
+ ({{this.$store.state.counter}})
+</router-link>
 <router-link to="/about" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">เกี่ยวกับเรา</router-link>
 <router-link to="/portfolio" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">ผลงาน</router-link>
 <router-link to="/service" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">บริการ</router-link>
@@ -42,7 +44,9 @@
 <div class="pt-5 pb-6" role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
 
 <div class="px-2 pt-2 pb-3 space-y-1">
-<a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">หน้าหลัก</a>
+<a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">หน้าหลัก
+   
+</a>
 
 <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">เกี่ยวกับเรา</a>
 

@@ -22,6 +22,11 @@ const routes = [
       path:'',
       component:Home
     }]
+    ,
+    meta: {
+      title: 'หน้าหลัก',
+     // description: 'รายละเอียดหน้า 404'
+    }
   },
   {
     path: '/about',
@@ -30,7 +35,10 @@ const routes = [
     children:[{
       path:'',
       component:About
-    }]
+    }],
+    meta:{
+      title:'เกี่ยวกับเรา'
+    }
   },
   {
     path: '/portfolio',
@@ -39,7 +47,10 @@ const routes = [
     children:[{
       path:'',
       component:Portfolio
-    }]
+    }],
+    meta:{
+      title:'ผลงาน'
+    }
   },{
     path: '/service',
     name: 'Service',
@@ -47,7 +58,10 @@ const routes = [
     children:[{
       path:'',
       component:Service
-    }]
+    }],
+    meta:{
+      title:'บริการ'
+    }
   },
   {
     path: '/contact',
@@ -56,7 +70,10 @@ const routes = [
     children:[{
       path:'',
       component:Contact
-    }]
+    }],
+    meta:{
+      title:'ติดต่อเรา'
+    }
   }
   ,
   {
@@ -66,7 +83,10 @@ const routes = [
     children:[{
       path:'',
       component:Register
-    }]
+    }],
+    meta:{
+      title:'สมัครสามาชิกใหม่'
+    }
   }
   ,
   {
@@ -76,7 +96,10 @@ const routes = [
     children:[{
       path:'',
       component:Login
-    }]
+    }],
+    meta:{
+      title:'เข้าสู่ระบบ'
+    }
   },
   {
     path: '/forgotpassword',
@@ -85,7 +108,10 @@ const routes = [
     children:[{
       path:'',
       component:ForgotPassword
-    }]
+    }],
+    meta:{
+      title:'ลืมรหัส'
+    }
   },
   // Error 404 
   {
