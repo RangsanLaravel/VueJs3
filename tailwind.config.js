@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['SOV_MuekMod','SOV_JD_KraNok','SOV_MuekMod_Bold','IBM Plex Sans Thai', 'sans-serif']
+        sans: ['SOV_MuekMod_Bold','SOV_JD_KraNok','SOV_MuekMod','IBM Plex Sans Thai', 'sans-serif']
       }
     },
   },

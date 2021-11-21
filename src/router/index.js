@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// Layouts
+// Layouts Frontend
 import  FronendLayout from '@/layouts/Frontend.vue'
-// view  
+//Layouts Backend
+import BackendLayout from '@/layouts/Backend.vue'
+
+// Frontend 
 import  Home from '@/views/frontend/Home.vue'
 import  About from '@/views/frontend/About.vue'
 import Portfolio from '@/views/frontend/Portfolio.vue'
@@ -11,15 +14,27 @@ import Register from '@/views/frontend/Register.vue'
 import Login from '@/views/frontend/Login.vue'
 import ForgotPassword from '@/views/frontend/ForgotPassword.vue'
 import NotFound404 from '@/views/frontend/NotFound404.vue'
+//Backend
+import Dashboard from '@/views/backend/Dashboard.vue'
+import Product from '@/views/backend/Product.vue'
+
+// ตัวแปรทดสอบกำหนดสถานะ
+const state =true
+
+//สร้างฟังก์ชั่น
+const authGuard =(to,from,next)=>{
+  //let isAuthenticated =
+  state?next():next({name:'Login'})
+}
 
 const routes = [
   // ---------------  Frontend Routing -----------------
   {
     path: '/',
-    name: 'Home',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'Home',
       component:Home
     }]
     ,
@@ -30,10 +45,10 @@ const routes = [
   },
   {
     path: '/about',
-    name: 'About',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'About',
       component:About
     }],
     meta:{
@@ -42,10 +57,10 @@ const routes = [
   },
   {
     path: '/portfolio',
-    name: 'Portfolio',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'Portfolio',
       component:Portfolio
     }],
     meta:{
@@ -53,10 +68,10 @@ const routes = [
     }
   },{
     path: '/service',
-    name: 'Service',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'Service',
       component:Service
     }],
     meta:{
@@ -65,10 +80,10 @@ const routes = [
   },
   {
     path: '/contact',
-    name: 'Contact',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'Contact',
       component:Contact
     }],
     meta:{
@@ -78,10 +93,10 @@ const routes = [
   ,
   {
     path: '/register',
-    name: 'Register',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'Register',
       component:Register
     }],
     meta:{
@@ -91,10 +106,10 @@ const routes = [
   ,
   {
     path: '/login',
-    name: 'Login',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'Login',
       component:Login
     }],
     meta:{
@@ -103,10 +118,10 @@ const routes = [
   },
   {
     path: '/forgotpassword',
-    name: 'Forgotpassword',
     component: FronendLayout,
     children:[{
       path:'',
+    name: 'Forgotpassword',
       component:ForgotPassword
     }],
     meta:{
@@ -121,8 +136,39 @@ const routes = [
       title: '404 ไม่พบหน้านี้',
       description: 'รายละเอียดหน้า 404'
     }
-  }
+  },
    // ---------------  Backend Routing -----------------
+
+   {
+    path: '/backend',
+    component: BackendLayout,
+    children: [
+      {
+        path: '',
+        name:'Dashboard',
+        component: Dashboard,
+        beforeEnter: authGuard
+      }
+    ],
+    meta:{
+      title: 'Dashboard'
+    }
+  },
+  {
+    path: '/backend',
+    component: BackendLayout,
+    children: [
+      {
+        path: 'products',
+        name:'Products',
+        component: Product,
+        beforeEnter: authGuard
+      }
+    ],
+    meta:{
+      title: 'Products'
+    }
+  }
 ]
 
 const router = createRouter({
